@@ -1,6 +1,7 @@
 var dynamic_list = (function($){
   'use strict';
   var data = {
+    list_style: 'inline',
     li: [
       {
         title: 'teste1',

@@ -7,9 +7,9 @@
   </head>
   <body>
     <div class="container">
-      <ul id="dynamic-list" class="dynamic-list">
+      <ul id="dynamic-list" class="dynamic-list clearfix">
         {{#li}}
-          <li class="dynamic-list__item dynamic-list__item--inline">
+          <li class="dynamic-list__item dynamic-list__item--{{list_style}}">
             <div class="dynamic-list__item__title">
               {{title}}
             </div>
