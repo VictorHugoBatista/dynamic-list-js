@@ -7,20 +7,23 @@
   </head>
   <body>
     <div class="container">
-      <ul id="dynamic-list" class="dynamic-list clearfix">
-        {{#li}}
-          <li class="dynamic-list__item dynamic-list__item--{{list_style}}">
-            <div class="dynamic-list__item__title">
-              {{title}}
-            </div>
-            <ul class="dynamic-list__item__details">
-              {{#details}}
-                <li class="dynamic-list__item__details__item">{{.}}</li>
-              {{/details}}
-            </ul>
-          </li>
-        {{/li}}
-      </ul>
+      <div id="dynamic-list">
+        <ul class="dynamic-list clearfix"></ul>
+        <div id="dynamic-list__template">
+          {{#li}}
+            <li class="dynamic-list__item dynamic-list__item--{{list_style}}">
+              <div class="dynamic-list__item__title">
+                {{title}}
+              </div>
+              <ul class="dynamic-list__item__details">
+                {{#details}}
+                  <li class="dynamic-list__item__details__item">{{.}}</li>
+                {{/details}}
+              </ul>
+            </li>
+          {{/li}}
+        </div>
+      </div>
     </div>
 
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
