@@ -3,18 +3,19 @@
   <head>
     <title>dynamic-list-js</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/dynamic-list.css" />
   </head>
   <body>
     <div class="container">
-      <ul id="dynamic-list">
+      <ul id="dynamic-list" class="dynamic-list dynamic-list--inline">
         {{#li}}
-          <li>
-            <div class="dynamic-list-item-title">
+          <li class="dynamic-list__item">
+            <div class="dynamic-list__item__title">
               {{title}}
             </div>
-            <ul class="dynamic-list-item-details">
+            <ul class="dynamic-list__item__details">
               {{#details}}
-                <li>{{.}}</li>
+                <li class="dynamic-list__item__details__item">{{.}}</li>
               {{/details}}
             </ul>
           </li>

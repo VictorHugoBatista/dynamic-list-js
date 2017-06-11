@@ -1,0 +1,62 @@
+/* ERASE UL LI DEFAULT STYLES */
+.dynamic-list,
+.dynamic-list .dynamic-list__item__details {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* DEFAULT LIST ITEM STYLES */
+.dynamic-list .dynamic-list__item {
+  background-color: #1e4584;
+  -webkit-box-shadow: inset 0px 0px 20px -8px rgba(176,41,95,1);
+  -moz-box-shadow: inset 0px 0px 20px -8px rgba(176,41,95,1);
+  box-shadow: inset 0px 0px 20px -8px rgba(176,41,95,1);
+  color: #fdfdfd;
+  border-radius: 3px;
+  font-size: 18px;
+  margin: .5em;
+  padding: .5em 1em;
+}
+
+.dynamic-list .dynamic-list__item__title {
+  font-weight: bold;
+}
+
+.dynamic-list .dynamic-list__item__details__item {
+  font-size: 15.5px;
+  padding: 0 .8em 0 .35em;
+  position: relative;
+}
+
+.dynamic-list .dynamic-list__item__details__item:after {
+  background: rgba(253,253,253,0);
+  background: -moz-linear-gradient(top, rgba(253,253,253,0) 0%, rgba(253,253,253,0.95) 45%, rgba(253,253,253,0.95) 55%, rgba(253,253,253,0) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(253,253,253,0)), color-stop(45%, rgba(253,253,253,0.95)), color-stop(55%, rgba(253,253,253,0.95)), color-stop(100%, rgba(253,253,253,0)));
+  background: -webkit-linear-gradient(top, rgba(253,253,253,0) 0%, rgba(253,253,253,0.95) 45%, rgba(253,253,253,0.95) 55%, rgba(253,253,253,0) 100%);
+  background: -o-linear-gradient(top, rgba(253,253,253,0) 0%, rgba(253,253,253,0.95) 45%, rgba(253,253,253,0.95) 55%, rgba(253,253,253,0) 100%);
+  background: -ms-linear-gradient(top, rgba(253,253,253,0) 0%, rgba(253,253,253,0.95) 45%, rgba(253,253,253,0.95) 55%, rgba(253,253,253,0) 100%);
+  background: linear-gradient(to bottom, rgba(253,253,253,0) 0%, rgba(253,253,253,0.95) 45%, rgba(253,253,253,0.95) 55%, rgba(253,253,253,0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdfdfd', endColorstr='#fdfdfd', GradientType=0 );
+  content: '';
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1px;
+}
+
+.dynamic-list .dynamic-list__item__details__item:last-child:after {
+  content: none;
+}
+
+/* MODIFIER DYNAMIC-LIST--INLINE */
+.dynamic-list.dynamic-list--inline .dynamic-list__item__title,
+.dynamic-list.dynamic-list--inline .dynamic-list__item__details,
+.dynamic-list.dynamic-list--inline .dynamic-list__item__details__item {
+  display: inline-block;
+}
+
+.dynamic-list.dynamic-list--inline .dynamic-list__item__title {
+  margin-right: 1.5em;
+}
