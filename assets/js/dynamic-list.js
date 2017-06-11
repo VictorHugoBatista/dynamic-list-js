@@ -3,16 +3,29 @@ var dynamic_list = (function($){
   var data = {
     li: [
       {
-        title: 'teste1'
+        title: 'teste1',
+        details: [
+          'detail1',
+          'detail2',
+          'detail3',
+        ]
       },
       {
-        title: 'teste2'
+        title: 'teste2',
+        details: [
+          'detail4',
+          'detail5',
+        ]
       },
       {
-        title: 'teste3'
+        title: 'teste3',
+        details: []
       },
       {
-        title: 'teste4'
+        title: 'teste4',
+        details: [
+          'detail6'
+        ]
       }
     ]
   },
