@@ -18,4 +18,18 @@
   border-radius: 3px;
   font-size: 16.5px;
   padding: .3em .7em;
+  -webkit-transition: 230ms ease-in-out;
+  transition: 230ms ease-in-out;
+}
+
+.list-style-selector__item button:hover {
+  -webkit-box-shadow: 0px 0px 30px -6px rgba(237,26,237,1);
+  -moz-box-shadow: 0px 0px 30px -6px rgba(237,26,237,1);
+  box-shadow: 0px 0px 30px -6px rgba(237,26,237,1);
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.list-style-selector__item button:disabled {
+  opacity: .7;
 }
