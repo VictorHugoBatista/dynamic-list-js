@@ -39,7 +39,7 @@ var dynamic_list = (function($){
   _render();
 
   // Adiciona função 'update_list_style' ao evento 'change_style_type'.
-  PubSub.subscribe('change_style_type', update_list_style);
+  PubSub.subscribe('change_list_style', update_list_style);
 
   /**
    * Renderiza componente na tela por meio do mustache.
