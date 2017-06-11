@@ -86,6 +86,6 @@
 }
 
 /* HIDE TEMPLATE HTML */
-#dynamic-list__template {
-  display: none;  
+.template-container {
+  display: none;
 }
