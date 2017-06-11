@@ -84,3 +84,8 @@
     width: 23%;
   }
 }
+
+/* HIDE TEMPLATE HTML */
+.template-container {
+  display: none;
+}
