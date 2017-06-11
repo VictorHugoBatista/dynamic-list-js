@@ -1,7 +1,7 @@
 var dynamic_list = (function($){
   'use strict';
   var data = {
-    list_style: 'inline',
+    list_style: 'block',
     li: [
       {
         title: 'teste1',
@@ -52,7 +52,7 @@ var dynamic_list = (function($){
    * Atualiza o tipo da lista e renderiza o componente na tela.
    * @param string list_style Tipo de lista à renderizar ('block' | 'inline')
    */
-  function update_list_style (list_style) {
+  function update_list_style (event_name, list_style) {
     data.list_style = list_style;
     _render();
   };
