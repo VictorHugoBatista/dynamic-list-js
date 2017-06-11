@@ -1,0 +1,9 @@
+{
+  "name": "dynamic-list-js",
+  "authors": [
+    "Victor Hugo <vct.bta@gmail.com>"
+  ],
+  "dependencies": {
+    "pubsub-js": "^1.5.7"
+  }
+}
