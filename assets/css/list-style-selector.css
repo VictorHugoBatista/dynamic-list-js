@@ -1,0 +1,21 @@
+.list-style-selector {
+  display: block;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+}
+
+.list-style-selector__item {
+  display: inline-block;
+  margin: .8em .3em .3em;
+}
+
+.list-style-selector__item button {
+  background-color: #1e4584;
+  color: #fdfdfd;
+  border: none;
+  border-radius: 3px;
+  font-size: 16.5px;
+  padding: .3em .7em;
+}
