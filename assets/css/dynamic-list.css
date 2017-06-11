@@ -24,6 +24,7 @@
 }
 
 .dynamic-list .dynamic-list__item__details__item {
+  display: inline-block;
   font-size: 15.5px;
   padding: 0 .8em 0 .35em;
   position: relative;
@@ -50,13 +51,12 @@
   content: none;
 }
 
-/* MODIFIER DYNAMIC-LIST--INLINE */
-.dynamic-list.dynamic-list--inline .dynamic-list__item__title,
-.dynamic-list.dynamic-list--inline .dynamic-list__item__details,
-.dynamic-list.dynamic-list--inline .dynamic-list__item__details__item {
+/* MODIFIER DYNAMIC-LIST_ITEM--INLINE */
+.dynamic-list__item.dynamic-list__item--inline .dynamic-list__item__title,
+.dynamic-list__item.dynamic-list__item--inline .dynamic-list__item__details {
   display: inline-block;
 }
 
-.dynamic-list.dynamic-list--inline .dynamic-list__item__title {
+.dynamic-list__item.dynamic-list__item--inline .dynamic-list__item__title {
   margin-right: 1.5em;
 }
