@@ -20,12 +20,20 @@ var list_style_selector = (function($){
 
   _render();
 
+  // Adiciona função 'do_click_action' ao evento 'click' por meio do jQuery.
   $list_style_selector.on('click', 'button', do_click_action);
 
+  /**
+   * Renderiza componente na tela por meio do mustache.
+   */
   function _render() {
     $list_style_selector_ul.html(Mustache.render($list_style_selector_template.html(), data));
   }
 
+  /**
+   * Evento de click nos botões do componente.
+   * Publica no evento 'change_list_style' e altera o estado dos botões clicados.
+   */
   function do_click_action() {
     var $this = $(this);
     PubSub.publish('change_list_style', $this.data('style-type'));
