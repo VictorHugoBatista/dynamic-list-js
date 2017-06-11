@@ -13,7 +13,12 @@
         <div id="list-style-selector__template" class="template-container">
           {{#li}}
             <li class="list-style-selector__item">
-              <button data-style-type="{{style}}">{{title}}</button>
+              {{#disabled}}
+                <button data-style-type="{{style}}" disabled>{{title}}</button>
+              {{/disabled}}
+              {{^disabled}}
+                <button data-style-type="{{style}}">{{title}}</button>
+              {{/disabled}}
             </li>
           {{/li}}
         </div>

@@ -5,12 +5,12 @@ var list_style_selector = (function($){
       {
         title: 'BLOCK',
         style: 'block',
-        active: true
+        disabled: true
       },
       {
         title: 'LIST',
         style: 'inline',
-        active: false
+        disabled: false
       }
     ]
   },
@@ -20,8 +20,8 @@ var list_style_selector = (function($){
 
   _render();
 
-  // Adiciona função 'do_click_action' ao evento 'click' por meio do jQuery.
-  $list_style_selector.on('click', 'button', do_click_action);
+  // Adiciona função '_update_button_group' ao evento 'click' por meio do jQuery.
+  $list_style_selector.on('click', 'button', _update_button_group);
 
   /**
    * Renderiza componente na tela por meio do mustache.
@@ -34,9 +34,24 @@ var list_style_selector = (function($){
    * Evento de click nos botões do componente.
    * Publica no evento 'change_list_style' e altera o estado dos botões clicados.
    */
-  function do_click_action() {
-    var $this = $(this);
-    PubSub.publish('change_list_style', $this.data('style-type'));
+  function _update_button_group() {
+    var $this = $(this),
+    style_type = $this.data('style-type');
+
+    _update_buttons_state(style_type);
+    PubSub.publish('change_list_style', style_type);
+  }
+
+  /**
+   * Atualiza o estado dos botões.
+   * @param string current_button_id Identificador do botão clicado atualmente.
+   */
+  function _update_buttons_state(current_button_id) {
+    $.each(data.li, function(key, li){
+      // Desabilita apenas o botão clicado atualmente.
+      li.disabled = li.style === current_button_id;
+    });
+    _render();
   }
 
   return {};
