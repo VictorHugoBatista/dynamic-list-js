@@ -1,10 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
-    dynamic-list-js
+    <title>dynamic-list-js</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/dynamic-list.css" />
   </head>
   <body>
-    
+    <div class="container">
+      <ul id="dynamic-list" class="dynamic-list clearfix">
+        {{#li}}
+          <li class="dynamic-list__item dynamic-list__item--{{list_style}}">
+            <div class="dynamic-list__item__title">
+              {{title}}
+            </div>
+            <ul class="dynamic-list__item__details">
+              {{#details}}
+                <li class="dynamic-list__item__details__item">{{.}}</li>
+              {{/details}}
+            </ul>
+          </li>
+        {{/li}}
+      </ul>
+    </div>
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/mustache.js/mustache.min.js"></script>
     <script src="bower_components/pubsub-js/src/pubsub.js"></script>
+    <script src="assets/js/dynamic-list.js"></script>
   </body>
 </html>
