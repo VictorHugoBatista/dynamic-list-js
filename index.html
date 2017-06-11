@@ -4,9 +4,17 @@
     dynamic-list-js
   </head>
   <body>
-    
+    <ul id="dynamic-list">
+      {{#li}}
+        <li>
+          {{title}}
+        </li>
+      {{/li}}
+    </ul>
+
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/mustache.js/mustache.js"></script>
     <script src="bower_components/pubsub-js/src/pubsub.js"></script>
+    <script src="assets/js/dynamic-list.js"></script>
   </body>
 </html>
