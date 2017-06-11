@@ -42,5 +42,12 @@ var dynamic_list = (function($){
     $dynamic_list_ul.html(Mustache.render($dynamic_list_template.html(), data));
   }
 
-  return {};
+  function update_list_style (list_style) {
+    data.list_style = list_style;
+    _render();
+  };
+
+  return {
+    update_list_style: update_list_style
+  };
 })(jQuery);
