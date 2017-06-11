@@ -38,15 +38,23 @@ var dynamic_list = (function($){
 
   _render();
 
+  /**
+   * Renderiza componente na tela por meio do mustache.
+   */
   function _render() {
     $dynamic_list_ul.html(Mustache.render($dynamic_list_template.html(), data));
   }
 
+  /**
+   * Atualiza o tipo da lista e renderiza o componente na tela.
+   * @param string list_style Tipo de lista à renderizar ('block' | 'inline')
+   */
   function update_list_style (list_style) {
     data.list_style = list_style;
     _render();
   };
 
+  // Atributos e funções expostas do componente.
   return {
     update_list_style: update_list_style
   };
