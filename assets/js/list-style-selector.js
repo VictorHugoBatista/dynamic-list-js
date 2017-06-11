@@ -4,11 +4,13 @@ var list_style_selector = (function($){
     li: [
       {
         title: 'BLOCK',
-        style: 'block'
+        style: 'block',
+        active: true
       },
       {
         title: 'LIST',
-        style: 'inline'
+        style: 'inline',
+        active: false
       }
     ]
   },
@@ -26,7 +28,6 @@ var list_style_selector = (function($){
 
   function do_click_action() {
     var $this = $(this);
-
     PubSub.publish('change_list_style', $this.data('style-type'));
   }
 
