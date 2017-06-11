@@ -60,3 +60,27 @@
 .dynamic-list__item.dynamic-list__item--inline .dynamic-list__item__title {
   margin-right: 1.5em;
 }
+
+/* MODIFIER DYNAMIC-LIST_ITEM--BLOCK */
+.dynamic-list__item.dynamic-list__item--block {
+  width: 100%;
+}
+
+@media (min-width: 480px) {
+  .dynamic-list__item.dynamic-list__item--block {
+    float: left;
+    width: 46%;
+  }
+}
+
+@media (min-width: 768px) {
+  .dynamic-list__item.dynamic-list__item--block {
+    width: 22%;
+  }
+}
+
+@media (min-width: 992px) {
+  .dynamic-list__item.dynamic-list__item--block {
+    width: 23%;
+  }
+}

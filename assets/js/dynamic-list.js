@@ -19,12 +19,14 @@ var dynamic_list = (function($){
       },
       {
         title: 'teste3',
-        details: []
+        details: [
+          'detail6'
+        ]
       },
       {
         title: 'teste4',
         details: [
-          'detail6'
+          'detail7'
         ]
       }
     ]
