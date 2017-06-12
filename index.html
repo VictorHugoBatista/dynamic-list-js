@@ -1,10 +1,52 @@
 <!DOCTYPE html>
 <html>
   <head>
-    dynamic-list-js
+    <title>dynamic-list-js</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/dynamic-list.css" />
+    <link rel="stylesheet" href="assets/css/list-style-selector.css" />
   </head>
   <body>
-    
+    <div class="container">
+      <div id="list-style-selector" class="clearfix">
+        <ul class="list-style-selector clearfix"></ul>
+        <div id="list-style-selector__template" class="template-container">
+          {{#li}}
+            <li class="list-style-selector__item">
+              {{#disabled}}
+                <button data-style-type="{{style}}" disabled>{{title}}</button>
+              {{/disabled}}
+              {{^disabled}}
+                <button data-style-type="{{style}}">{{title}}</button>
+              {{/disabled}}
+            </li>
+          {{/li}}
+        </div>
+      </div>
+      <div id="dynamic-list">
+        <ul class="dynamic-list clearfix"></ul>
+        <div id="dynamic-list__template" class="template-container">
+          {{#li}}
+            <li class="dynamic-list__item dynamic-list__item--{{list_style}}">
+              <div class="dynamic-list__item__title">
+                {{title}}
+              </div>
+              <ul class="dynamic-list__item__details">
+                {{#details}}
+                  <li class="dynamic-list__item__details__item">{{.}}</li>
+                {{/details}}
+              </ul>
+            </li>
+          {{/li}}
+        </div>
+      </div>
+    </div>
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/mustache.js/mustache.min.js"></script>
     <script src="bower_components/pubsub-js/src/pubsub.js"></script>
+    <script src="assets/js/dynamic-list.js"></script>
+    <script src="assets/js/list-style-selector.js"></script>
   </body>
 </html>
