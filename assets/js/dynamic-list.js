@@ -4,30 +4,30 @@ export class DynamicList {
             list_style: initialStyle,
             li: initialItens
         };
-        this.$dynamic_list = $(elementSelector);
-        this.$dynamic_list_ul = this.$dynamic_list.children('ul');
-        this.$dynamic_list_template = this.$dynamic_list.children('#dynamic-list__template');
+        this.$dynamicList = $(elementSelector);
+        this.$dynamicListUl = this.$dynamicList.children('ul');
+        this.$dynamicListTemplate = this.$dynamicList.children('#dynamic-list__template');
 
-        render();
+        this.render();
 
-        // Adiciona função 'update_list_style' ao evento 'change_style_type'.
-        PubSub.subscribe('change_list_style', this.update_list_style);
+        // Adiciona função 'updateListStyle' ao evento 'change_style_type'.
+        PubSub.subscribe('change_list_style', this.updateListStyle);
     }
 
     /**
      * Renderiza componente na tela por meio do mustache.
      */
     render() {
-        this.$dynamic_list_ul
-            .html(Mustache.render(this.$dynamic_list_template.html(), this.data));
+        this.$dynamicListUl
+            .html(Mustache.render(this.$dynamicListTemplate.html(), this.data));
     }
 
     /**
      * Atualiza o tipo da lista e renderiza o componente na tela.
-     * @param string list_style Tipo de lista à renderizar ('block' | 'inline')
+     * @param string listStyle Tipo de lista à renderizar ('block' | 'inline')
      */
-    update_list_style(event_name, list_style) {
-        this.data.list_style = list_style;
-        _render();
+    updateListStyle(eventName, listStyle) {
+        this.data.list_style = listStyle;
+        this.render();
     };
 }
