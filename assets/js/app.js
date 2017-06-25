@@ -29,14 +29,14 @@ let initialListItens = [
             'detail7'
         ]
     }
-];
-let list = new DynamicList(
+],
+list = new DynamicList(
     '#dynamic-list',
     '#dynamic-list__template',
     initialListItens
-);
+),
 
-let listStyles = [
+listStyles = [
     {
         title: 'BLOCK',
         style: 'block',
@@ -47,10 +47,9 @@ let listStyles = [
         style: 'inline',
         disabled: false
     }
-];
-let listStyleSelector =
-    new ListStyleSelector(
-        '#list-style-selector',
-        '#list-style-selector__template',
-        listStyles
-    );
+],
+listStyleSelector = new ListStyleSelector(
+    '#list-style-selector',
+    '#list-style-selector__template',
+    listStyles
+);
