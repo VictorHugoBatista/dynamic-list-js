@@ -15,8 +15,8 @@ export class ListStyleSelector {
           ]
       };
       this.$list_style_selector = $(element_selector);
-      this.$list_style_selector_ul = $list_style_selector.children('ul');
-      this.$list_style_selector_template = $list_style_selector.children('#list-style-selector__template');
+      this.$list_style_selector_ul = this.$list_style_selector.children('ul');
+      this.$list_style_selector_template = this.$list_style_selector.children('#list-style-selector__template');
 
       this.render();
 
@@ -39,7 +39,7 @@ export class ListStyleSelector {
    */
   update_button_group()
   {
-    var $this = $(this),
+    let $this = $(this),
         style_type = $this.data('style-type');
 
     this.update_buttons_state(style_type);
@@ -52,10 +52,8 @@ export class ListStyleSelector {
    */
   update_buttons_state(current_button_id)
   {
-    $.each(data.li, function(key, li){
-        // Desabilita apenas o botão clicado atualmente.
-        li.disabled = li.style === current_button_id;
-    });
+    // Desabilita apenas o botão clicado atualmente.
+    $.each(data.li, (key, li) => li.disabled = li.style === current_button_id);
     this.render();
   }
 }
