@@ -6,9 +6,9 @@
   "author": "Victor Hugo <vct.bta@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "serve": "webpack-dev-server --entry ./assets/js/app.js --output-filename ./dist/bundle.js",
-    "build": "webpack assets/js/app.js dist/bundle.js",
-    "build:prod": "webpack assets/js/app.js dist/bundle.js -p"
+    "serve": "webpack-dev-server",
+    "build": "webpack",
+    "build:prod": "webpack -p"
   },
   "dependencies": {
     "bootstrap": "^3.3.7",

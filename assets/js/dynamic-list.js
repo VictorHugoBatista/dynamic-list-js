@@ -1,64 +1,36 @@
-export var dynamic_list = function(){
-  'use strict';
-  var data = {
-    list_style: 'block',
-    li: [
-      {
-        title: 'teste1',
-        details: [
-          'detail1',
-          'detail2',
-          'detail3',
-        ]
-      },
-      {
-        title: 'teste2',
-        details: [
-          'detail4',
-          'detail5',
-        ]
-      },
-      {
-        title: 'teste3',
-        details: [
-          'detail6'
-        ]
-      },
-      {
-        title: 'teste4',
-        details: [
-          'detail7'
-        ]
-      }
-    ]
-  },
-  $dynamic_list = $('#dynamic-list'),
-  $dynamic_list_ul = $dynamic_list.children('ul'),
-  $dynamic_list_template = $dynamic_list.children('#dynamic-list__template');
+export class DynamicList {
+    constructor(elementSelector, templateSelector, initialItens, initialStyle = 'block') {
+        this.data = {
+            list_style: initialStyle,
+            li: initialItens
+        };
+        this.$dynamicList = $(elementSelector);
+        this.$dynamicListUl = this.$dynamicList.children('ul');
+        this.$dynamicListTemplate = this.$dynamicList.children(templateSelector);
 
-  _render();
+        this.render();
 
-  // Adiciona função 'update_list_style' ao evento 'change_style_type'.
-  PubSub.subscribe('change_list_style', update_list_style);
+        // Adiciona função 'updateListStyle' ao evento 'change_style_type'.
+        PubSub.subscribe(
+            'change_list_style',
+            (eventName, listStyle) => this.updateListStyle(listStyle)
+        );
+    }
 
-  /**
-   * Renderiza componente na tela por meio do mustache.
-   */
-  function _render() {
-    $dynamic_list_ul.html(Mustache.render($dynamic_list_template.html(), data));
-  }
+    /**
+     * Renderiza componente na tela por meio do mustache.
+     */
+    render() {
+        this.$dynamicListUl
+            .html(Mustache.render(this.$dynamicListTemplate.html(), this.data));
+    }
 
-  /**
-   * Atualiza o tipo da lista e renderiza o componente na tela.
-   * @param string list_style Tipo de lista à renderizar ('block' | 'inline')
-   */
-  function update_list_style (event_name, list_style) {
-    data.list_style = list_style;
-    _render();
-  };
-
-  // Atributos e funções expostas do componente.
-  return {
-    update_list_style: update_list_style
-  };
-};
+    /**
+     * Atualiza o tipo da lista e renderiza o componente na tela.
+     * @param string listStyle Tipo de lista à renderizar ('block' | 'inline')
+     */
+    updateListStyle(listStyle) {
+        this.data.list_style = listStyle;
+        this.render();
+    };
+}

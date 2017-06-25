@@ -1,58 +1,53 @@
-export var list_style_selector = function(){
-  'use strict';
-  var data = {
-    li: [
-      {
-        title: 'BLOCK',
-        style: 'block',
-        disabled: true
-      },
-      {
-        title: 'LIST',
-        style: 'inline',
-        disabled: false
-      }
-    ]
-  },
-  $list_style_selector = $('#list-style-selector'),
-  $list_style_selector_ul = $list_style_selector.children('ul'),
-  $list_style_selector_template = $list_style_selector.children('#list-style-selector__template');
+export class ListStyleSelector {
+    constructor(elementSelector, templateSelector, listStyles) {
+        this.data = {
+            li: listStyles
+        };
+        this.$listStyleSelector = $(elementSelector);
+        this.$listStyleSelectorUl = this.$listStyleSelector.children('ul');
+        this.$listStyleSelectorTemplate =
+            this.$listStyleSelector.children(templateSelector);
 
-  _render();
+        this.render();
 
-  // Adiciona função '_update_button_group' ao evento 'click' por meio do jQuery.
-  $list_style_selector.on('click', 'button', _update_button_group);
+        // Adiciona função '_update_button_group' ao evento 'click' por meio do jQuery.
+        this.$listStyleSelector.on(
+            'click',
+            'button',
+            (event) => this.updateButtonGroup(event)
+        );
+    }
 
-  /**
-   * Renderiza componente na tela por meio do mustache.
-   */
-  function _render() {
-    $list_style_selector_ul.html(Mustache.render($list_style_selector_template.html(), data));
-  }
+    /**
+     * Renderiza o componente utilizando a biblioteca Mustache.
+     */
+    render() {
+        this.$listStyleSelectorUl
+            .html(Mustache.render(this.$listStyleSelectorTemplate.html(), this.data));
+    }
 
-  /**
-   * Evento de click nos botões do componente.
-   * Publica no evento 'change_list_style' e altera o estado dos botões clicados.
-   */
-  function _update_button_group() {
-    var $this = $(this),
-    style_type = $this.data('style-type');
+    /**
+     * Evento de click nos botões do componente.
+     * Publica no evento 'change_list_style' e altera o estado dos botões clicados.
+     */
+    updateButtonGroup(event) {
+        let $this = $(event.currentTarget),
+            style_type = $this.data('style-type');
 
-    _update_buttons_state(style_type);
-    PubSub.publish('change_list_style', style_type);
-  }
+        this.updateButtonsState(style_type);
+        PubSub.publish('change_list_style', style_type);
+    }
 
-  /**
-   * Atualiza o estado dos botões.
-   * @param string current_button_id Identificador do botão clicado atualmente.
-   */
-  function _update_buttons_state(current_button_id) {
-    $.each(data.li, function(key, li){
-      // Desabilita apenas o botão clicado atualmente.
-      li.disabled = li.style === current_button_id;
-    });
-    _render();
-  }
-
-  return {};
-};
+    /**
+     * Atualiza o estado dos botões.
+     * @param string current_button_id Identificador do botão clicado atualmente.
+     */
+    updateButtonsState(current_button_id) {
+        // Desabilita apenas o botão clicado atualmente.
+        $.each(this.data.li, (key, li) => {
+            li.disabled = li.style === current_button_id
+        });
+        console.log(current_button_id);
+        this.render();
+    }
+}
