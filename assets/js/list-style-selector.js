@@ -1,5 +1,5 @@
 export class ListStyleSelector {
-  constructor() {
+  constructor(element_selector) {
       this.data = {
           li: [
               {
@@ -14,7 +14,7 @@ export class ListStyleSelector {
               }
           ]
       };
-      this.$list_style_selector = $('#list-style-selector');
+      this.$list_style_selector = $(element_selector);
       this.$list_style_selector_ul = $list_style_selector.children('ul');
       this.$list_style_selector_template = $list_style_selector.children('#list-style-selector__template');
 
@@ -24,6 +24,9 @@ export class ListStyleSelector {
       this.$list_style_selector.on('click', 'button', this.update_button_group);
   }
 
+  /**
+   * Renderiza o componente utilizando a biblioteca Mustache.
+   */
   render()
   {
       this.$list_style_selector_ul
