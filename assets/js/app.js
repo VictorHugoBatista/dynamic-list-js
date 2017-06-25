@@ -1,7 +1,7 @@
-import {dynamic_list} from './dynamic-list';
+import {DynamicList} from './dynamic-list';
 import {ListStyleSelector} from './list-style-selector';
 
-var list = dynamic_list();
+let list = new DynamicList();
 
 let listStyles = [
     {
