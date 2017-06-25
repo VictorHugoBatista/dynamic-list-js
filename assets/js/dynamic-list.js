@@ -1,4 +1,4 @@
-var dynamic_list = (function($){
+export var dynamic_list = function(){
   'use strict';
   var data = {
     list_style: 'block',
@@ -61,4 +61,4 @@ var dynamic_list = (function($){
   return {
     update_list_style: update_list_style
   };
-})(jQuery);
+};

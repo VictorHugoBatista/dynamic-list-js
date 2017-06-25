@@ -1,4 +1,4 @@
-var list_style_selector = (function($){
+export var list_style_selector = function(){
   'use strict';
   var data = {
     li: [
@@ -55,4 +55,4 @@ var list_style_selector = (function($){
   }
 
   return {};
-})(jQuery);
+};
