@@ -14,7 +14,7 @@ export class ListStyleSelector {
         this.$listStyleSelector.on(
             'click',
             'button',
-            () => this.updateButtonGroup()
+            (event) => this.updateButtonGroup(event)
         );
     }
 
@@ -30,8 +30,8 @@ export class ListStyleSelector {
      * Evento de click nos botões do componente.
      * Publica no evento 'change_list_style' e altera o estado dos botões clicados.
      */
-    updateButtonGroup() {
-        let $this = $(this),
+    updateButtonGroup(event) {
+        let $this = $(event.currentTarget),
             style_type = $this.data('style-type');
 
         this.updateButtonsState(style_type);
@@ -44,7 +44,10 @@ export class ListStyleSelector {
      */
     updateButtonsState(current_button_id) {
         // Desabilita apenas o botão clicado atualmente.
-        $.each(this.data.li, (key, li) => li.disabled = li.style === current_button_id);
+        $.each(this.data.li, (key, li) => {
+            li.disabled = li.style === current_button_id
+        });
+        console.log(current_button_id);
         this.render();
     }
 }
