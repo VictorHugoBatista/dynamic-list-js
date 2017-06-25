@@ -1,11 +1,12 @@
 export class ListStyleSelector {
-    constructor(elementSelector, listStyles) {
+    constructor(elementSelector, templateSelector, listStyles) {
         this.data = {
             li: listStyles
         };
         this.$listStyleSelector = $(elementSelector);
         this.$listStyleSelectorUl = this.$listStyleSelector.children('ul');
-        this.$listStyleSelectorTemplate = this.$listStyleSelector.children('#list-style-selector__template');
+        this.$listStyleSelectorTemplate =
+            this.$listStyleSelector.children(templateSelector);
 
         this.render();
 

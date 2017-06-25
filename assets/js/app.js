@@ -30,7 +30,11 @@ let initialListItens = [
         ]
     }
 ];
-let list = new DynamicList('#dynamic-list', initialListItens);
+let list = new DynamicList(
+    '#dynamic-list',
+    '#dynamic-list__template',
+    initialListItens
+);
 
 let listStyles = [
     {
@@ -45,4 +49,8 @@ let listStyles = [
     }
 ];
 let listStyleSelector =
-    new ListStyleSelector('#list-style-selector', listStyles);
+    new ListStyleSelector(
+        '#list-style-selector',
+        '#list-style-selector__template',
+        listStyles
+    );
