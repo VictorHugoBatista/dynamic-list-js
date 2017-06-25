@@ -11,7 +11,10 @@ export class DynamicList {
         this.render();
 
         // Adiciona função 'updateListStyle' ao evento 'change_style_type'.
-        PubSub.subscribe('change_list_style', this.updateListStyle);
+        PubSub.subscribe(
+            'change_list_style',
+            (eventName, listStyle) => this.updateListStyle(listStyle)
+        );
     }
 
     /**
@@ -26,7 +29,7 @@ export class DynamicList {
      * Atualiza o tipo da lista e renderiza o componente na tela.
      * @param string listStyle Tipo de lista à renderizar ('block' | 'inline')
      */
-    updateListStyle(eventName, listStyle) {
+    updateListStyle(listStyle) {
         this.data.list_style = listStyle;
         this.render();
     };

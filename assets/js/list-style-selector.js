@@ -11,7 +11,11 @@ export class ListStyleSelector {
         this.render();
 
         // Adiciona função '_update_button_group' ao evento 'click' por meio do jQuery.
-        this.$listStyleSelector.on('click', 'button', this.updateButtonGroup);
+        this.$listStyleSelector.on(
+            'click',
+            'button',
+            () => this.updateButtonGroup()
+        );
     }
 
     /**
@@ -40,7 +44,7 @@ export class ListStyleSelector {
      */
     updateButtonsState(current_button_id) {
         // Desabilita apenas o botão clicado atualmente.
-        $.each(data.li, (key, li) => li.disabled = li.style === current_button_id);
+        $.each(this.data.li, (key, li) => li.disabled = li.style === current_button_id);
         this.render();
     }
 }
