@@ -1,7 +1,36 @@
 import {DynamicList} from './dynamic-list';
 import {ListStyleSelector} from './list-style-selector';
 
-let list = new DynamicList();
+let initialListItens = [
+    {
+        title: 'teste1',
+        details: [
+            'detail1',
+            'detail2',
+            'detail3',
+        ]
+    },
+    {
+        title: 'teste2',
+        details: [
+            'detail4',
+            'detail5',
+        ]
+    },
+    {
+        title: 'teste3',
+        details: [
+            'detail6'
+        ]
+    },
+    {
+        title: 'teste4',
+        details: [
+            'detail7'
+        ]
+    }
+];
+let list = new DynamicList('#dynamic-list', initialListItens);
 
 let listStyles = [
     {
