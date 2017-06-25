@@ -1,0 +1,8 @@
+{
+  "name": "dynamic-list-js",
+  "version": "0.1.0-beta",
+  "main": "index.js",
+  "repository": "https://github.com/VictorHugoBatista/dynamic-list-js.git",
+  "author": "Victor Hugo <vct.bta@gmail.com>",
+  "license": "MIT"
+}
