@@ -1,20 +1,9 @@
 export class ListStyleSelector {
-  constructor(element_selector) {
+  constructor(elementSelector, listStyles) {
       this.data = {
-          li: [
-              {
-                  title: 'BLOCK',
-                  style: 'block',
-                  disabled: true
-              },
-              {
-                  title: 'LIST',
-                  style: 'inline',
-                  disabled: false
-              }
-          ]
+          li: listStyles
       };
-      this.$list_style_selector = $(element_selector);
+      this.$list_style_selector = $(elementSelector);
       this.$list_style_selector_ul = this.$list_style_selector.children('ul');
       this.$list_style_selector_template = this.$list_style_selector.children('#list-style-selector__template');
 
@@ -30,7 +19,7 @@ export class ListStyleSelector {
   render()
   {
       this.$list_style_selector_ul
-          .html(Mustache.render(this.$list_style_selector_template.html(), data));
+          .html(Mustache.render(this.$list_style_selector_template.html(), this.data));
   }
 
   /**
