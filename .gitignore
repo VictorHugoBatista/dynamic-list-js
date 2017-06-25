@@ -1,1 +1,8 @@
-bower_components
+####### IDE CONFIG FILES #######
+.idea
+*.sublime-project
+*.sublime-workspace
+
+####### NPM/WEBPACK GENERATED FILES #######
+node_modules
+dist
